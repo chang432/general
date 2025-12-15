@@ -1,6 +1,9 @@
+#cloud-config
 packages:
   - python3-pip
   - python3-venv
+  - unzip 
+  - curl
 
 package_update: true
 package_upgrade: true
@@ -9,8 +12,7 @@ runcmd:
   - cd /opt
   - git clone "https://github.com/chang432/general.git"
 
-  - chmod +x /opt/general/ai_newsletter/process.sh
-  - (crontab -l 2>/dev/null; echo "0 7 * * * /opt/general/ai_newsletter/process.sh >> /var/log/ai_newsletter.log 2>&1") | crontab -
-
   - reboot
-    
+
+  - chmod +x /opt/general/startup.sh
+  - (crontab -l 2>/dev/null; echo "*/1 * * * * /opt/general/startup.sh >> /var/log/startup.log 2>&1") | crontab -
