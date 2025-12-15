@@ -4,7 +4,9 @@ from openai import OpenAI
 
 
 # Define your prompt (include instruction to return only HTML)
-prompt = (
+prompt = ( "Construct a simple html page that displays hello world." )
+
+prompt1 = (
     """
     Context: I want you to create a morning newsletter of topics in the following structured order. Be sure to separate each of these points cleanly so they have their own section in the response and answer in a concise and informative manner. Ensure the data is generated for the current system date. Load the result into a nicely formatted static html page with the content centered. No follow up questions.
         - Tell what the weather will be like today and for the next couple of days in Brookline, Massachusetts.
