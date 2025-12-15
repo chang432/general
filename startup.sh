@@ -14,3 +14,6 @@ mount /dev/disk/by-id/scsi-0HC_Volume_${EXTERNAL_VOLUME_ID} /mnt/main
 #  Set up ai_newsletter cron job
 chmod +x /opt/general/ai_newsletter/process.sh
 (crontab -l 2>/dev/null; echo "0 7 * * * /opt/general/ai_newsletter/process.sh >> /var/log/ai_newsletter.log 2>&1") | crontab -
+
+echo "startup script executed successfully, turning off cron..."
+crontab -l 2>/dev/null | sed '/startup.sh/ s/^/#/' | crontab -
