@@ -56,11 +56,10 @@ try:
         )
     
     # Save to file
-    with open("./test.html", "w", encoding="utf-8") as f:
+    with open("./newsletter.html", "w", encoding="utf-8") as f:
         f.write(html_content)
     
-    print("✓ HTML file saved successfully as 'test.html'")
-    print(f"File location: {os.path.abspath('./test.html')}")
-
+    print("✓ HTML file saved successfully as 'newsletter.html'")
+    print(f"File location: {os.path.abspath('./newsletter.html')}")
 except Exception as e:
     print(f"Error: {e}")

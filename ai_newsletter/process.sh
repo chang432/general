@@ -37,7 +37,9 @@ else
     source "$VENV_PATH/bin/activate"
 fi
 
-# Run the Python script
-# echo "Running ai_newsletter.py..."
-# cd "$PROJECT_PATH"
-# python3 ai_newsletter.py
+Run the Python script
+echo "Running ai_newsletter.py..."
+cd "$PROJECT_PATH"
+python3 ai_newsletter.py
+
+python3 send_email.py
