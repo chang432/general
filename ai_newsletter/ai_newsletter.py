@@ -8,7 +8,7 @@ prompt1 = ( "Construct a simple html page that displays hello world." )
 
 prompt = (
     """
-    Context: I want you to create a morning newsletter of topics in the following structured order. Be sure to separate each of these points cleanly so they have their own section in the response and answer in a concise and informative manner. Ensure the data is generated for the current system date. Load the result into a nicely formatted static html page with the content centered. No follow up questions.
+    Context: I want you to create a morning newsletter of topics in the following structured order. Be sure to separate each of these points cleanly so they have their own section in the response and answer in a concise and informative manner. Ensure the data is generated for the current system date. Load the result into a nicely formatted static html page for mobile view. No follow up questions.
         - Tell what the weather will be like today and for the next couple of days in Brookline, Massachusetts.
         - Pick 5 of the current most important global news events and give me a few bullet points describing each one
             - include a small relevant real life picture for each one (make sure it is embedded directly into the html and loadable)
