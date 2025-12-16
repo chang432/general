@@ -1,11 +1,10 @@
 import os
 import boto3
 from openai import OpenAI
+from datetime import datetime
 
 
 # Define your prompt (include instruction to return only HTML)
-prompt1 = ( "Construct a simple html page that displays hello world." )
-
 prompt = (
     """
     Context: I want you to create a morning newsletter of topics in the following structured order. Be sure to separate each of these points cleanly so they have their own section in the response and answer in a concise and informative manner. Ensure the data is generated for the current system date. Load the result into a nicely formatted static html page for mobile view. No follow up questions.
@@ -37,6 +36,7 @@ def get_openai_client():
     return OpenAI(api_key=api_key)
 
 try:
+    print("Generating newsletter HTML for date:", datetime.now().strftime("%Y-%m-%d"))
     # Initialize OpenAI client
     client = get_openai_client()
     
