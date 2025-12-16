@@ -5,6 +5,8 @@
 
 VENV_PATH="/opt/general/ai_newsletter/venv"
 PROJECT_PATH="/opt/general/ai_newsletter"
+S3_BUCKET="my-ai-newsletter"
+S3_KEY="newsletter.html"
 
 # Check if virtual environment exists
 if [ ! -d "$VENV_PATH" ]; then
@@ -42,6 +44,6 @@ echo "Running ai_newsletter.py..."
 cd "$PROJECT_PATH"
 python3 ai_newsletter.py
 
-aws s3 cp newsletter.html s3://my-ai-newsletter/newsletter.html
+aws s3 cp newsletter.html s3://$S3_BUCKET/$S3_KEY
 
 rm -f newsletter.html
